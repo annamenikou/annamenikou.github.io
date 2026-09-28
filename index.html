@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anna Menikou, AI and cyber security consultant</title>
+<meta name="description" content="Anna Menikou is an independent AI security and cyber security consultant working across research, methodology and practical evaluation.">
+
+<!-- Favicon, an inline brass provenance mark so the file stays self contained -->
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIyNCIgZmlsbD0iIzE2MjMyZSIvPgo8bGluZSB4MT0iNTAiIHkxPSIzMCIgeDI9IjUwIiB5Mj0iNzAiIHN0cm9rZT0iI2NjOTYzNiIgc3Ryb2tlLXdpZHRoPSI3IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGNpcmNsZSBjeD0iNTAiIGN5PSIzMCIgcj0iMTEiIGZpbGw9IiMxNjIzMmUiIHN0cm9rZT0iI2NjOTYzNiIgc3Ryb2tlLXdpZHRoPSI3Ii8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNzAiIHI9IjExIiBmaWxsPSIjY2M5NjM2Ii8+Cjwvc3ZnPgo=">
+<link rel="apple-touch-icon" href="favicon.svg">
+
+<!-- Social share preview. og-image.png ships alongside this file.
+     URLs below assume a user site repo named annamenikou.github.io.
+     If you use a project repo instead, add the repo name to each URL,
+     for example https://annamenikou.github.io/portfolio/og-image.png -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Anna Menikou, AI and cyber security consultant">
+<meta property="og:description" content="Independent AI security and cyber security consultant. Applied mathematics meets AI and cyber security.">
+<meta property="og:image" content="https://annamenikou.github.io/og-image.png">
+<meta property="og:url" content="https://annamenikou.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Anna Menikou, AI and cyber security consultant">
+<meta name="twitter:description" content="Independent AI security and cyber security consultant. Applied mathematics meets AI and cyber security.">
+<meta name="twitter:image" content="https://annamenikou.github.io/og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16232e;
+    --ink-2:#20313d;
+    --paper:#f8f7f3;
+    --paper-warm:#f2f0e9;
+    --cream-text:#edeae1;
+    --slate:#54666f;
+    --brass:#b07d2b;
+    --brass-bright:#cc9636;
+    --line:rgba(22,35,46,.16);
+    --line-soft:rgba(22,35,46,.09);
+    --maxw:74rem;
+    --read:36rem;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  a{color:inherit;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.25rem,5vw,4rem);}
+
+  h1,h2,h3{font-family:"Newsreader",Georgia,serif;font-weight:400;letter-spacing:-.01em;}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:20;
+    background:rgba(22,35,46,.92);
+    backdrop-filter:blur(6px);
+    color:var(--cream-text);
+    border-bottom:1px solid rgba(237,234,225,.12);
+  }
+  .topbar .wrap{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding-top:.85rem;padding-bottom:.85rem;}
+  .brandmark{font-family:"Newsreader",serif;font-size:1.15rem;letter-spacing:0;}
+  .brandmark b{font-weight:500;}
+  .navlinks{display:flex;gap:1.6rem;font-size:.9rem;}
+  .navlinks a{color:rgba(237,234,225,.72);text-decoration:none;transition:color .18s;}
+  .navlinks a:hover{color:var(--brass-bright);}
+  .navlinks a:focus-visible{outline:2px solid var(--brass-bright);outline-offset:4px;color:var(--cream-text);}
+  @media(max-width:720px){.navlinks{display:none;}}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:var(--ink);
+    color:var(--cream-text);
+    position:relative;
+    overflow:hidden;
+    padding-block:clamp(4.5rem,12vw,9rem) clamp(4rem,9vw,7rem);
+  }
+  /* faint provenance guide lines, quiet, subject-led */
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:linear-gradient(90deg,rgba(237,234,225,.05) 1px,transparent 1px);
+    background-size:7.5rem 100%;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 40%,#000 60%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 40%,#000 60%,transparent);
+    opacity:.55;pointer-events:none;
+  }
+  .hero .wrap{position:relative;z-index:1;}
+  .avail{
+    display:inline-flex;align-items:center;gap:.6rem;
+    font-size:.82rem;letter-spacing:.02em;color:rgba(237,234,225,.82);
+    border:1px solid rgba(237,234,225,.2);
+    border-radius:2rem;padding:.35rem .85rem;margin-bottom:2.2rem;
+  }
+  .avail .dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--brass-bright);box-shadow:0 0 0 3px rgba(204,150,54,.22);}
+  .hero h1{
+    font-size:clamp(3rem,9vw,6rem);
+    line-height:.98;margin:0 0 1.3rem;letter-spacing:-.025em;
+  }
+  .hero .role{
+    font-family:"Newsreader",serif;font-style:italic;font-weight:300;
+    font-size:clamp(1.3rem,3.2vw,1.9rem);
+    color:var(--brass-bright);margin:0 0 2rem;line-height:1.25;
+  }
+  .hero .lead{
+    font-size:clamp(1.05rem,2vw,1.28rem);
+    max-width:42rem;color:rgba(237,234,225,.9);margin:0 0 2.4rem;
+  }
+  .trust{font-size:.95rem;color:rgba(237,234,225,.62);max-width:38rem;border-top:1px solid rgba(237,234,225,.14);padding-top:1.4rem;}
+
+  /* ---------- spine / trace line ---------- */
+  .spine{position:relative;}
+  @media(min-width:860px){
+    .spine{padding-left:3.5rem;}
+    .spine::before{
+      content:"";position:absolute;left:.5rem;top:0;bottom:0;width:1px;
+      background:linear-gradient(180deg,transparent,var(--line) 3rem,var(--line) calc(100% - 3rem),transparent);
+    }
+  }
+
+  section{padding-block:clamp(3.5rem,8vw,6rem);}
+  .section-head{margin-bottom:2.6rem;position:relative;}
+  .section-head h2{font-size:clamp(1.9rem,4vw,2.7rem);margin:0 0 .5rem;}
+  .section-head p{color:var(--slate);max-width:var(--read);margin:0;}
+  @media(min-width:860px){
+    .section-head::before{
+      content:"";position:absolute;left:-3.5rem;top:.7rem;
+      width:.85rem;height:.85rem;border-radius:50%;
+      background:var(--paper);border:2px solid var(--brass);
+      transform:translateX(-.42rem);
+    }
+  }
+
+  .divide{border:0;border-top:1px solid var(--line-soft);margin:0;}
+
+  /* ---------- what I do ---------- */
+  .offer{
+    display:grid;grid-template-columns:14rem 1fr;gap:1.5rem 2.5rem;
+    padding-block:1.8rem;
+    border-top:1px solid var(--line-soft);
+  }
+  .offer:first-of-type{border-top:0;}
+  .offer h3{font-size:1.4rem;margin:0;line-height:1.15;}
+  .offer p{margin:0;color:var(--slate);max-width:var(--read);}
+  @media(max-width:640px){.offer{grid-template-columns:1fr;gap:.5rem;}}
+
+  /* ---------- reports ---------- */
+  .reports{display:grid;gap:1.5rem;}
+  .report{
+    background:var(--ink);color:var(--cream-text);
+    border-radius:.4rem;
+    padding:clamp(1.8rem,4vw,2.8rem);
+    position:relative;
+  }
+  .report .kicker{
+    font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--brass-bright);margin:0 0 1rem;
+  }
+  .report h3{font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 1rem;color:var(--cream-text);line-height:1.1;}
+  .report .meta{font-size:.92rem;color:rgba(237,234,225,.66);margin:0 0 1.2rem;}
+  .report p.body{color:rgba(237,234,225,.9);max-width:44rem;margin:0 0 1.8rem;}
+  .readlink{
+    display:inline-block;font-weight:500;font-size:.95rem;
+    color:var(--cream-text);text-decoration:none;
+    border-bottom:2px solid var(--brass);padding-bottom:.15rem;
+    transition:border-color .18s,color .18s;
+  }
+  .readlink:hover{color:var(--brass-bright);border-color:var(--brass-bright);}
+  .readlink:focus-visible{outline:2px solid var(--brass-bright);outline-offset:4px;}
+  .readlink.pending{color:rgba(237,234,225,.55);border-color:rgba(237,234,225,.3);cursor:default;}
+
+  /* ---------- selected work ---------- */
+  .work{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem 2.5rem;}
+  @media(max-width:680px){.work{grid-template-columns:1fr;}}
+  .work article{padding-top:1.3rem;border-top:1px solid var(--line);}
+  .work h3{font-size:1.25rem;margin:0 0 .5rem;}
+  .work p{margin:0;color:var(--slate);font-size:.97rem;}
+
+  /* ---------- background ---------- */
+  .cv{display:grid;gap:0;}
+  .role-row{
+    display:grid;grid-template-columns:9rem 1fr;gap:1.5rem 2rem;
+    padding-block:1.6rem;border-top:1px solid var(--line-soft);
+  }
+  .role-row:first-child{border-top:0;}
+  .role-row .when{color:var(--slate);font-size:.92rem;padding-top:.15rem;}
+  .role-row h3{margin:0 0 .3rem;font-size:1.3rem;}
+  .role-row .org{color:var(--brass);font-weight:500;font-size:.95rem;margin:0 0 .6rem;font-family:"IBM Plex Sans",sans-serif;}
+  .role-row p{margin:0;color:var(--slate);max-width:var(--read);}
+  @media(max-width:640px){.role-row{grid-template-columns:1fr;gap:.4rem;}}
+
+  .certs{margin-top:2.4rem;color:var(--slate);font-size:.95rem;}
+  .certs strong{color:var(--ink);font-weight:600;font-family:"IBM Plex Sans",sans-serif;}
+
+  /* ---------- about ---------- */
+  .about p{max-width:var(--read);color:var(--ink);font-size:1.08rem;}
+  .about p + p{margin-top:1.2rem;}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--ink);color:var(--cream-text);}
+  .contact .section-head h2{color:var(--cream-text);}
+  .contact .section-head::before{background:var(--ink);}
+  .contact p.lead-c{font-size:1.15rem;color:rgba(237,234,225,.9);max-width:42rem;}
+  .cta-list{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;margin-top:2rem;font-size:1.05rem;}
+  .cta-list a{color:var(--cream-text);text-decoration:none;border-bottom:2px solid var(--brass);padding-bottom:.15rem;transition:color .18s,border-color .18s;}
+  .cta-list a:hover{color:var(--brass-bright);border-color:var(--brass-bright);}
+  .cta-list a:focus-visible{outline:2px solid var(--brass-bright);outline-offset:4px;}
+
+  footer{background:var(--ink);color:rgba(237,234,225,.5);border-top:1px solid rgba(237,234,225,.12);}
+  footer .wrap{padding-block:2rem;font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
+
+  /* ---------- one page-load reveal ---------- */
+  .rise{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards;}
+  .rise.d1{animation-delay:.05s;}
+  .rise.d2{animation-delay:.14s;}
+  .rise.d3{animation-delay:.23s;}
+  .rise.d4{animation-delay:.32s;}
+  .rise.d5{animation-delay:.41s;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion:reduce){
+    .rise{animation:none;opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="brandmark"><b>Anna Menikou</b></span>
+    <nav class="navlinks" aria-label="Sections">
+      <a href="#work">What I do</a>
+      <a href="#research">Research</a>
+      <a href="#background">Background</a>
+      <a href="#contact">Get in touch</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="avail rise d1"><span class="dot" aria-hidden="true"></span>Available for contract work from October 2026</span>
+    <h1 class="rise d2">Anna Menikou</h1>
+    <p class="role rise d3">Independent AI security and cyber security consultant</p>
+    <p class="lead rise d4">I work where applied mathematics meets AI and cyber security. My focus is helping government and industry teams see where the real risks sit in AI systems, then turning that picture into controls they can act on.</p>
+    <p class="trust rise d5">Recent work through the Laboratory for AI Security Research with Plexal, Cisco and UK government partners, spanning supply chain security, agentic AI and technology evaluation.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="spine">
+
+    <!-- WHAT I DO -->
+    <section id="work">
+      <div class="section-head">
+        <h2>What I do</h2>
+        <p>I take on focused pieces of AI and cyber security work, from early research and methodology through to hands on testing and clear reporting for senior audiences.</p>
+      </div>
+
+      <div class="offer">
+        <h3>AI security research and methodology</h3>
+        <p>Scoping messy, open ended problems, mapping the technology and market landscape, and building repeatable ways to decide where effort should go. This is the kind of work I led for LASR, including its Opportunity Book and market analysis.</p>
+      </div>
+      <div class="offer">
+        <h3>AI supply chain security</h3>
+        <p>Working through provenance, dependencies and the trust gaps in AI enabled systems, and helping teams move from simple visibility towards controls they can rely on. This is the subject of my co authored paper with Cisco.</p>
+      </div>
+      <div class="offer">
+        <h3>Agentic AI security</h3>
+        <p>Looking at how more autonomous AI systems change the attack surface, and what that means in practice for organisations adopting them. I have briefed researchers and policymakers on this and had strong feedback from senior stakeholders.</p>
+      </div>
+      <div class="offer">
+        <h3>Testing and evaluation</h3>
+        <p>Designing test frameworks, standing up environments and synthetic datasets, and running structured evaluations so that decisions rest on evidence rather than vendor claims.</p>
+      </div>
+      <div class="offer">
+        <h3>Translating risk for decision makers</h3>
+        <p>Turning deep technical detail into briefings and reports that government and industry stakeholders can act on. Much of my work has been presented to senior audiences and used to inform strategy and investment.</p>
+      </div>
+    </section>
+
+    <hr class="divide">
+
+    <!-- RESEARCH / THE TWO REPORTS -->
+    <section id="research">
+      <div class="section-head">
+        <h2>Published research</h2>
+        <p>Two reports I produced as part of the Laboratory for AI Security Research sit at the centre of my recent work.</p>
+      </div>
+
+      <div class="reports">
+
+        <article class="report">
+          <p class="kicker">White paper</p>
+          <h3>AI Supply Chain Security: From Visibility to Action</h3>
+          <p class="meta">Co author. Laboratory for AI Security Research, supported by Cisco and UK government partners.</p>
+          <p class="body">Applied research into how AI supply chains create risk, why traditional software assurance falls short once systems are AI enabled, and how organisations can move from static transparency towards controls they can act on. Well received across government and industry audiences.</p>
+          <!-- REPLACE with your preferred canonical link if you have one -->
+          <a class="readlink" href="https://gblogs.cisco.com/uki/securing-the-future-moving-from-ai-supply-chain-visibility-to-decisive-action/" target="_blank" rel="noopener">Read the white paper</a>
+        </article>
+
+        <article class="report">
+          <p class="kicker">Market study</p>
+          <h3>LASR Market Insights Report</h3>
+          <p class="meta">Author. Laboratory for AI Security Research.</p>
+          <p class="body">A study of supply and demand for AI security across sectors, mapping current and emerging trends and setting out where the real opportunities lie. Produced for and briefed to senior stakeholders across government, academia and industry.</p>
+          <!-- REPLACE href="#report-2" with the real LinkedIn or LASR link, then remove the "pending" class -->
+          <a class="readlink pending" href="#report-2">Link to follow</a>
+        </article>
+
+      </div>
+    </section>
+
+    <hr class="divide">
+
+    <!-- SELECTED PROJECT WORK -->
+    <section id="projects">
+      <div class="section-head">
+        <h2>Selected project work</h2>
+        <p>A sample of the technical and research work behind the reports.</p>
+      </div>
+
+      <div class="work">
+        <article>
+          <h3>Vendor evaluation testbed</h3>
+          <p>Designed and built a technical testbed to evaluate shortlisted vendors in a realistic operational setting, including the testing framework, environment setup and synthetic data. The client noted the capability would not have been possible without the team.</p>
+        </article>
+        <article>
+          <h3>Geospatial imaging and computer vision study</h3>
+          <p>A research study assessing image processing technologies that can improve geospatial intelligence workflows, classifying approaches such as few shot learning and digital twins. Described by the government client as a formidable piece of work and used to inform investment decisions.</p>
+        </article>
+        <article>
+          <h3>AI testing, evaluation, verification and validation</h3>
+          <p>Structured technology and market evaluation of AI assurance approaches, validated with industry and academic experts, to support government understanding of AI assurance challenges and future procurement.</p>
+        </article>
+        <article>
+          <h3>The LASR Opportunity Book</h3>
+          <p>Took a stalled workstream and turned it into a structured, repeatable asset mapping critical AI security use cases to available supply across companies, policies and products.</p>
+        </article>
+      </div>
+    </section>
+
+    <hr class="divide">
+
+    <!-- BACKGROUND -->
+    <section id="background">
+      <div class="section-head">
+        <h2>Background</h2>
+        <p>Five years across cyber security consulting and applied technology research, on a foundation of applied mathematics.</p>
+      </div>
+
+      <div class="cv">
+        <div class="role-row">
+          <div class="when">2025 to present</div>
+          <div>
+            <h3>Technology and Product Consultant</h3>
+            <p class="org">Plexal</p>
+            <p>Primary technical consultant for the Laboratory for AI Security Research, leading AI focused workstreams, producing UK AI security market analysis, and briefing government clients and policymakers.</p>
+          </div>
+        </div>
+        <div class="role-row">
+          <div class="when">2023 to 2024</div>
+          <div>
+            <h3>Cyber Consultant</h3>
+            <p class="org">Daintta</p>
+            <p>Delivered technical and strategic cyber projects for public sector clients, including cost modelling for a national infrastructure design and a technical lead role on a centralised open source capability.</p>
+          </div>
+        </div>
+        <div class="role-row">
+          <div class="when">2021 to 2023</div>
+          <div>
+            <h3>Cyber Technology Specialist</h3>
+            <p class="org">Darktrace</p>
+            <p>Managed the security posture of around a hundred clients, from cloud only setups to full operational technology networks, with hands on deployment, incident response support and troubleshooting.</p>
+          </div>
+        </div>
+        <div class="role-row">
+          <div class="when">2017 to 2021</div>
+          <div>
+            <h3>Master's in Mathematics</h3>
+            <p class="org">University of Nottingham</p>
+            <p>Applied focus across fluid dynamics, optimisation and modelling, with a dissertation on pyroclastic flow. Winner of the Wynne-Roberts prize for mathematics. Coding in Python, C++, Matlab and R.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="certs"><strong>Certifications and tooling.</strong> CompTIA Network+, Certified Microsoft Excel Specialist, and cyber accreditations from Darktrace. Hands on with Python, HTML and LaTeX across research and personal projects.</p>
+    </section>
+
+    <hr class="divide">
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="section-head">
+        <h2>A bit about me</h2>
+      </div>
+      <p>My foundation is in applied mathematics and I still think like a mathematician. I like finding the real world anchor for an abstract problem, which is what pulled me from modelling volcanoes towards securing AI in the first place. The most useful thing I bring is that intersection, deep technical work paired with the ability to explain it plainly to the people who have to decide what to do.</p>
+      <p>Outside work I compete and coach in Brazilian jiu jitsu, and I have taught women only classes to help keep a safe space for women to train. I founded Ethical Guildford, a community group for conversations about equality and the environment, and I have volunteered with Sue Ryder since school. Giving back matters to me and it tends to shape the work I take on.</p>
+    </section>
+
+  </div>
+</main>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="spine">
+      <div class="section-head">
+        <h2>Work with me</h2>
+      </div>
+      <p class="lead-c">I am building a portfolio of independent AI and cyber security work from late 2026. If you have a problem that sits somewhere between research, security and clear communication, I would like to hear about it.</p>
+      <div class="cta-list">
+        <a href="mailto:anna.menikou@gmail.com">anna.menikou@gmail.com</a>
+        <a href="https://www.linkedin.com/in/anna-menikou/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/annamenikou" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Anna Menikou, London and remote</span>
+    <span>AI security and cyber security consulting</span>
+  </div>
+</footer>
+
+</body>
+</html>
